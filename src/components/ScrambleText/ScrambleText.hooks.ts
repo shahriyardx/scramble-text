@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react"
+import { type ComponentProps, useEffect, useState } from "react"
 
 import type { ScrambleTextProps } from "./ScrambleText.types"
 import { scramble } from "./ScrambleText.utils"
+
+type Props = ComponentProps<"span"> & ScrambleTextProps
 
 export const useScramble = ({
 	text,
 	speed,
 	iterationPerCharacter,
 	enabled,
-}: ScrambleTextProps) => {
+	characters,
+}: Props) => {
 	const [scrambledWord, setScrambledWord] = useState(
-		scramble({ iterations: 0, text }),
+		scramble({ iterations: 0, text, characters }),
 	)
 
 	useEffect(() => {
@@ -19,12 +22,10 @@ export const useScramble = ({
 
 		const interval = setInterval(() => {
 			if (iterations >= text.length) clearInterval(interval)
-
-			setScrambledWord(scramble({ iterations, text }))
-
+			setScrambledWord(scramble({ iterations, text, characters }))
 			iterations += 1 / (iterationPerCharacter || 3)
 		}, speed || 30)
-	}, [text, iterationPerCharacter, speed, enabled])
+	}, [text, iterationPerCharacter, speed, enabled, characters])
 
 	return scrambledWord
 }

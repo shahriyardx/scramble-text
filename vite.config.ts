@@ -19,7 +19,7 @@ export default defineConfig({
 			input: Object.fromEntries(
 				// https://rollupjs.org/configuration-options/#input
 				glob
-					.sync("src/**/*.{ts,tsx}")
+					.sync("src/**/*.{ts,tsx}", { ignore: "src/**/*.stories.{ts,tsx}" })
 					.map((file) => [
 						// 1. The name of the entry point
 						// lib/nested/foo.js becomes nested/foo

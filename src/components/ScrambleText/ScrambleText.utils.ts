@@ -1,14 +1,19 @@
-const ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 export const scramble = ({
 	iterations,
 	text,
-}: { iterations: number; text: string }) => {
+	characters,
+}: { iterations: number; text: string; characters?: string }) => {
+	const chars = characters || CHARACTERS
+
+	console.log(chars)
+
 	const scrambled = text
 		.split("")
 		.map((_, index) => {
 			if (index < iterations) return text[index]
-			return ALPHABETS[Math.floor(Math.random() * 26)]
+			return chars[Math.floor(Math.random() * chars.length)]
 		})
 		.join("")
 

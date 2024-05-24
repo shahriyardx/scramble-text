@@ -6,12 +6,14 @@ const ScrambleText = ({
 	speed = 30,
 	iterationPerCharacter = 1,
 	enabled = true,
+	characters,
 }: ScrambleTextProps) => {
 	const scrambleText = useScramble({
 		text,
 		speed,
 		iterationPerCharacter,
 		enabled,
+		characters,
 	})
 
 	return <span suppressHydrationWarning>{scrambleText}</span>
