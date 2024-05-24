@@ -1,8 +1,9 @@
-name: publish npm
+name: Test build
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
@@ -28,7 +29,5 @@ jobs:
       - name: Restore original package.json
         run: mv package.json.tmp package.json
 
-      - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Test build
+        run: npm run build
