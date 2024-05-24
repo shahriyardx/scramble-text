@@ -21,7 +21,6 @@
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"prepack": "npm run build",
-		"prepare": "husky",
 		"biome-lint": "biome lint ./"
 	},
 	"lint-staged": {
