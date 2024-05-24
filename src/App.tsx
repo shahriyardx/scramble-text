@@ -1,4 +1,4 @@
-import { ScrambleText } from "../";
+import { ScrambleText } from "@shahriyardx/scramble-text";
 
 const App = () => {
 	return (

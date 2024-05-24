@@ -583,6 +583,11 @@
     argparse "~1.0.9"
     string-argv "~0.3.1"
 
+"@shahriyardx/scramble-text@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@shahriyardx/scramble-text/-/scramble-text-1.0.3.tgz#9e6aa8e32e35a8f7995e253ffd2c2bf8d87c94cf"
+  integrity sha512-s/6p1vj71U97InV5ZPaeMt11p5opKsJnVXQgOfusfnl8l3n/R2Bfy6dubHkOvWPYQlzw0ca5+UpLgIHzfKsGxw==
+
 "@types/argparse@1.0.38":
   version "1.0.38"
   resolved "https://registry.yarnpkg.com/@types/argparse/-/argparse-1.0.38.tgz#a81fd8606d481f873a3800c6ebae4f1d768a56a9"
@@ -1948,6 +1953,7 @@ string-argv@~0.3.1:
   integrity sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
