@@ -10,6 +10,7 @@ import { ScrambleText } from "@shahriyardx/scramble-text"
    text="SCRAMBLE"
    speed={30}
    iterationPerCharacter={3}
-   characters=""
+   characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+   enabled={true}
 >
 ```
