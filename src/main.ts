@@ -1,1 +1,1 @@
-export { ScrambleText } from "./components/ScrambleText"
+export * from "./components"

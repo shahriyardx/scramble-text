@@ -7,8 +7,6 @@ export const scramble = ({
 }: { iterations: number; text: string; characters?: string }) => {
 	const chars = characters || CHARACTERS
 
-	console.log(chars)
-
 	const scrambled = text
 		.split("")
 		.map((_, index) => {
