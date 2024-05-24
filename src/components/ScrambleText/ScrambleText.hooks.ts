@@ -17,7 +17,9 @@ export const useScramble = ({
 	)
 
 	useEffect(() => {
-		if (!enabled) return
+		if (!enabled)
+			return setScrambledWord(scramble({ iterations: 0, text, characters }))
+
 		let iterations = 0
 
 		const interval = setInterval(() => {
