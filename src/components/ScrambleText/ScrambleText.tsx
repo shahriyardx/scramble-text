@@ -4,7 +4,14 @@ import type { ScrambleTextProps } from "./ScrambleText.types"
 
 const ScrambleText = forwardRef<HTMLSpanElement, ScrambleTextProps>(
 	(
-		{ text, speed = 30, iterationPerCharacter = 1, enabled = true, characters },
+		{
+			text,
+			speed = 30,
+			iterationPerCharacter = 1,
+			enabled = true,
+			characters,
+			scrambleOnDisable,
+		},
 		ref,
 	) => {
 		const scrambleText = useScramble({
@@ -13,6 +20,7 @@ const ScrambleText = forwardRef<HTMLSpanElement, ScrambleTextProps>(
 			iterationPerCharacter,
 			enabled,
 			characters,
+			scrambleOnDisable,
 		})
 
 		return (

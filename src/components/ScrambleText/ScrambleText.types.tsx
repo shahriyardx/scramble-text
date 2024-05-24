@@ -4,4 +4,5 @@ export type ScrambleTextProps = {
 	iterationPerCharacter?: number
 	enabled?: boolean
 	characters?: string
+	scrambleOnDisable?: boolean
 }

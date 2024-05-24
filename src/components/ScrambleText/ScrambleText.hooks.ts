@@ -11,6 +11,7 @@ export const useScramble = ({
 	iterationPerCharacter,
 	enabled,
 	characters,
+	scrambleOnDisable,
 }: Props) => {
 	const [scrambledWord, setScrambledWord] = useState(
 		scramble({ iterations: 0, text, characters }),
@@ -18,7 +19,9 @@ export const useScramble = ({
 
 	useEffect(() => {
 		if (!enabled)
-			return setScrambledWord(scramble({ iterations: 0, text, characters }))
+			return scrambleOnDisable
+				? setScrambledWord(scramble({ iterations: 0, text, characters }))
+				: undefined
 
 		let iterations = 0
 
@@ -27,7 +30,14 @@ export const useScramble = ({
 			setScrambledWord(scramble({ iterations, text, characters }))
 			iterations += 1 / (iterationPerCharacter || 3)
 		}, speed || 30)
-	}, [text, iterationPerCharacter, speed, enabled, characters])
+	}, [
+		text,
+		iterationPerCharacter,
+		speed,
+		enabled,
+		characters,
+		scrambleOnDisable,
+	])
 
 	return scrambledWord
 }
