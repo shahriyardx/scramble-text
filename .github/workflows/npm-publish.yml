@@ -21,6 +21,7 @@ jobs:
         run: |
           mv package.json package.json.tmp
           jq 'del(.devDependencies["@chromatic-com/storybook"], .devDependencies["@storybook/addon-essentials"], .devDependencies["@storybook/addon-interactions"], .devDependencies["@storybook/addon-links"], .devDependencies["@storybook/addon-onboarding"], .devDependencies["@storybook/blocks"], .devDependencies["@storybook/react"], .devDependencies["@storybook/react-vite"], .devDependencies["@storybook/test"], .devDependencies["@biomejs/biome"], .devDependencies["lint-staged"], .devDependencies["storybook"])' package.json.tmp > package.json
+          find src/components -type f -name "*.stories.tsx" -exec rm {} +
 
       - name: Install dependencies
         run: npm install
