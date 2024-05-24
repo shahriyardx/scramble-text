@@ -17,8 +17,16 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org
 
+      - name: Exclude specific devDependencies
+        run: |
+          mv package.json package.json.tmp
+          jq 'del(.devDependencies["@chromatic-com/storybook"], .devDependencies["@storybook/addon-essentials"], .devDependencies["@storybook/addon-interactions"], .devDependencies["@storybook/addon-links"], .devDependencies["@storybook/addon-onboarding"], .devDependencies["@storybook/blocks"], .devDependencies["@storybook/react"], .devDependencies["@storybook/react-vite"], .devDependencies["@storybook/test"])' package.json.tmp > package.json
+
       - name: Install dependencies
         run: npm install
+
+      - name: Restore original package.json
+        run: mv package.json.tmp package.json
 
       - name: Publish to npm
         run: npm publish --access public
