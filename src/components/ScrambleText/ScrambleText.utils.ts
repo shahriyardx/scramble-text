@@ -9,9 +9,11 @@ export const scramble = ({
 
 	const scrambled = text
 		.split("")
-		.map((_, index) => {
+		.map((letter, index) => {
 			if (index < iterations) return text[index]
-			return chars[Math.floor(Math.random() * chars.length)]
+			return letter === " "
+				? " "
+				: chars[Math.floor(Math.random() * chars.length)]
 		})
 		.join("")
 
