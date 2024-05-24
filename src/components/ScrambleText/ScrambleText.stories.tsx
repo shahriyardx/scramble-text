@@ -16,5 +16,5 @@ Default.args = {
 	text: "ScrambleText",
 	speed: 30,
 	iterationPerCharacter: 3,
-	characters: "1234466665456",
+	characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 }
